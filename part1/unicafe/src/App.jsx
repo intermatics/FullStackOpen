@@ -11,6 +11,9 @@ const App = () => {
   const handleGood = ()=> setGood(good + 1)
   const handleNeutral = ()=>setNeutral(neutral + 1)
   const handleBad = ()=>setBad(bad + 1)
+  const total = good+neutral+bad
+  const average = total > 0 ? ( (1*good)+(-1*bad) ) / total : 0
+  const positive = good > 0 ?  (good / total) * 100 : 0
 
   return (
     <div>
@@ -22,6 +25,9 @@ const App = () => {
         <li>good {good}</li>
         <li>neutral {neutral}</li>
         <li>bad {bad}</li>
+        <li>all { total }</li>
+        <li>average {average}</li>
+        <li>positive {positive} %</li>
       </ul>
     </div>
   )
